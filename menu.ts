@@ -4,6 +4,13 @@ export class Menu {
   private _items:FirstSubMenu[];
   private _routerLink:string;
 
+  constructor(label: string, icon: string, items: FirstSubMenu[], routerLink: string) {
+    this._label = label;
+    this._icon = icon;
+    this._items = items;
+    this._routerLink = routerLink;
+  }
+
   get label(): string {
     return this._label;
   }
@@ -45,6 +52,13 @@ export class FirstSubMenu{
   private _routerLink:string;
 
 
+  constructor(label: string, icon: string, items: SecondSubMenu[], routerLink: string) {
+    this._label = label;
+    this._icon = icon;
+    this._items = items;
+    this._routerLink = routerLink;
+  }
+
   get label(): string {
     return this._label;
   }
@@ -80,9 +94,16 @@ export class FirstSubMenu{
 export class SecondSubMenu{
   private _label: string;
   private _icon:string;
-  private _items:SecondSubMenu[];
+
   private _routerLink:string;
 
+
+  constructor(label: string, icon: string,  routerLink: string) {
+    this._label = label;
+    this._icon = icon;
+
+    this._routerLink = routerLink;
+  }
 
   get label(): string {
     return this._label;
@@ -100,13 +121,7 @@ export class SecondSubMenu{
     this._icon = value;
   }
 
-  get items(): SecondSubMenu[] {
-    return this._items;
-  }
 
-  set items(value: SecondSubMenu[]) {
-    this._items = value;
-  }
 
   get routerLink(): string {
     return this._routerLink;
